@@ -36,5 +36,5 @@ for k, v in genre_dict.items():
         }
     )
 
-with open("genre.json", "w", encoding='utf-8') as json_file:
+with open("genre1000.json", "w", encoding='utf-8') as json_file:
     json.dump(genre_list, json_file, ensure_ascii=False)

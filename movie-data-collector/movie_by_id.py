@@ -31,5 +31,5 @@ for movie_id in movie_ids:
     pk += 1
 
 
-with open("data/movie.json", "w", encoding='utf-8') as json_file:
+with open("data/movie1000.json", "w", encoding='utf-8') as json_file:
     json.dump(movie_list, json_file, ensure_ascii=False)
