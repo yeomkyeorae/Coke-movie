@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container flex-nowrap justify-content-center text-center bg-dark text-light shadow text-shadow">
+  <form action="{% url 'accounts:rating' %}" method="POST">
+    <div class="row">
+      {% csrf_token %}
+      {% for movie in movies %}
+      <div class="col-3 flex-nowrap shadow mb-5">
+        <img style="height:100%;width:100%" src="http://image.tmdb.org/t/p/w500/{{ movie.poster_url }}" alt="">
+        <select name="{{ movie.code }}" id="{{ movie.code }}">
+          <option value="0">선택안함</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      {% endfor %}
+    </div>
+    <input type="submit" value="제출">
+    </form>
+</div>
+{% endblock %}
